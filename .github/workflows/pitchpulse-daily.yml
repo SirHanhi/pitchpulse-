@@ -1,0 +1,114 @@
+name: PitchPulse Daily
+
+# Runs the pipeline twice a day, grades yesterday's results, and publishes
+# the PWA to GitHub Pages. All secrets live in repo Settings -> Secrets and
+# variables -> Actions. NEVER commit keys to the repo.
+
+on:
+  schedule:
+    # Times are UTC. Adjust to land ~2h before typical kickoffs.
+    - cron: '0 9 * * *'    # 09:00 UTC — morning slate + grade overnight finishers
+    - cron: '0 16 * * *'   # 16:00 UTC — pre-kickoff refresh (real line movement)
+  workflow_dispatch:        # manual "Run workflow" button
+
+# Allow the job to commit state files and deploy Pages.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pitchpulse
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests praw anthropic
+
+      - name: Seed site dir with committed state (line movement + record)
+        run: |
+          mkdir -p site
+          cp -f ./odds_history.json site/odds_history.json 2>/dev/null || true
+          cp -f ./track_record.json site/track_record.json 2>/dev/null || true
+
+      - name: Grade finished matches from the last run
+        # Runs first so today's report reflects yesterday's results.
+        # Won't fail the build if there's nothing to grade yet.
+        continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          PP_SPORT_KEY: ${{ vars.PP_SPORT_KEY || 'soccer_fifa_world_cup' }}
+          PP_OUTPUT_DIR: site
+        run: python pitchpulse_tracker.py grade
+
+      - name: Run pipeline (generate today's slate)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
+          PP_SPORT_KEY: ${{ vars.PP_SPORT_KEY || 'soccer_fifa_world_cup' }}
+          PP_LEAGUE_ID: ${{ vars.PP_LEAGUE_ID || '1' }}
+          PP_SEASON: ${{ vars.PP_SEASON || '2026' }}
+          PP_HOURS_AHEAD: ${{ vars.PP_HOURS_AHEAD || '24' }}
+          PP_OUTPUT_DIR: site
+        run: python pitchpulse_pipeline_fi.py
+
+      - name: Log predictions to the track record
+        env:
+          PP_OUTPUT_DIR: site
+        run: |
+          python - << 'PY'
+          import json, os, importlib.util
+          spec = importlib.util.spec_from_file_location("trk", "pitchpulse_tracker.py")
+          trk = importlib.util.module_from_spec(spec); spec.loader.exec_module(trk)
+          # The pipeline embeds previews in site/index.html; re-derive from the
+          # state file it also writes. Simplest: read the JSON the page carries.
+          import re
+          html = open("site/index.html", encoding="utf-8").read()
+          m = re.search(r'id="pp-data"[^>]*>(.*?)</script>', html, re.S)
+          if m:
+              data = json.loads(m.group(1).replace('<\\/','</'))
+              trk.log_predictions(data.get("previews", []))
+          PY
+
+      - name: Commit state files (snapshots + track record)
+        run: |
+          git config user.name  "pitchpulse-bot"
+          git config user.email "bot@users.noreply.github.com"
+          # Persist line-movement snapshots and the track record across runs.
+          cp -f site/odds_history.json   ./odds_history.json   2>/dev/null || true
+          cp -f site/track_record.json   ./track_record.json   2>/dev/null || true
+          git add odds_history.json track_record.json || true
+          git commit -m "state: $(date -u +%FT%TZ)" || echo "nothing to commit"
+          git push || echo "nothing to push"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: run
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
