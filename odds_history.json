@@ -1,0 +1,26 @@
+{
+ "80d82d1113934bfbea4ce8daf37a2433": {
+  "first_seen": "2026-06-11T20:51:07.353269+00:00",
+  "opening": {
+   "Mexico": 1.0,
+   "South Africa": 451.0,
+   "Draw": 126.0
+  }
+ },
+ "384cbb5d76b535896a24fe65f93cfac8": {
+  "first_seen": "2026-06-11T20:51:07.353269+00:00",
+  "opening": {
+   "Czech Republic": 2.95,
+   "South Korea": 2.63,
+   "Draw": 3.05
+  }
+ },
+ "d1f4f946c70a0b4e81f5d43e9d32361c": {
+  "first_seen": "2026-06-11T20:51:07.353269+00:00",
+  "opening": {
+   "Bosnia & Herzegovina": 4.59,
+   "Canada": 1.83,
+   "Draw": 3.54
+  }
+ }
+}
