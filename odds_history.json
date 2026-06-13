@@ -62,5 +62,21 @@
    "Turkey": 1.7,
    "Draw": 3.75
   }
+ },
+ "d79edbd6aaeb578d33e313446b18d333": {
+  "first_seen": "2026-06-13T20:50:13.192993+00:00",
+  "opening": {
+   "Cura\u00e7ao": 41.0,
+   "Germany": 1.04,
+   "Draw": 19.0
+  }
+ },
+ "32ec06abda2398ac41501c86eb9aa376": {
+  "first_seen": "2026-06-13T20:50:13.192993+00:00",
+  "opening": {
+   "Japan": 3.75,
+   "Netherlands": 2.0,
+   "Draw": 3.55
+  }
  }
 }
