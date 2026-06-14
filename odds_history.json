@@ -78,5 +78,21 @@
    "Netherlands": 2.0,
    "Draw": 3.55
   }
+ },
+ "05752bb341e197001387b64f3a06b9b2": {
+  "first_seen": "2026-06-14T15:29:00.151206+00:00",
+  "opening": {
+   "Ecuador": 2.55,
+   "Ivory Coast": 3.25,
+   "Draw": 2.87
+  }
+ },
+ "b55f9569de3f4d731bc5537ff5ff43e4": {
+  "first_seen": "2026-06-14T15:29:00.151206+00:00",
+  "opening": {
+   "Sweden": 1.93,
+   "Tunisia": 4.25,
+   "Draw": 3.4
+  }
  }
 }
