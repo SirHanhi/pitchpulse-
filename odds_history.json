@@ -142,5 +142,37 @@
    "Norway": 1.19,
    "Draw": 7.1
   }
+ },
+ "f31b2ee9e1cc6f7e641467f8237eaa21": {
+  "first_seen": "2026-06-16T20:24:34.889430+00:00",
+  "opening": {
+   "Algeria": 8.0,
+   "Argentina": 1.44,
+   "Draw": 4.5
+  }
+ },
+ "25161cf6cf0cd9be17ae2e7e224a1f45": {
+  "first_seen": "2026-06-16T20:24:34.889430+00:00",
+  "opening": {
+   "Austria": 1.36,
+   "Jordan": 8.75,
+   "Draw": 5.0
+  }
+ },
+ "6cc871c121a1869b4612d3fb22fa9d55": {
+  "first_seen": "2026-06-16T20:24:34.889430+00:00",
+  "opening": {
+   "DR Congo": 11.0,
+   "Portugal": 1.29,
+   "Draw": 5.52
+  }
+ },
+ "689096c8cd7e2753b9fec95321943c5d": {
+  "first_seen": "2026-06-16T20:24:34.889430+00:00",
+  "opening": {
+   "Croatia": 5.0,
+   "England": 1.73,
+   "Draw": 3.7
+  }
  }
 }
