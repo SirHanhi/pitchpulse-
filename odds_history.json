@@ -174,5 +174,29 @@
    "England": 1.73,
    "Draw": 3.7
   }
+ },
+ "87afdb85c977b451e1c00f5e3e632601": {
+  "first_seen": "2026-06-17T18:04:45.469838+00:00",
+  "opening": {
+   "Ghana": 2.32,
+   "Panama": 3.3,
+   "Draw": 3.2
+  }
+ },
+ "22083e7a8e5362c711bc05c1e1319a1f": {
+  "first_seen": "2026-06-17T18:04:45.469838+00:00",
+  "opening": {
+   "Colombia": 1.36,
+   "Uzbekistan": 9.15,
+   "Draw": 4.8
+  }
+ },
+ "66ebb9e3f949caded535d97ce686ca09": {
+  "first_seen": "2026-06-17T18:04:45.469838+00:00",
+  "opening": {
+   "Czech Republic": 1.75,
+   "South Africa": 4.8,
+   "Draw": 3.75
+  }
  }
 }
