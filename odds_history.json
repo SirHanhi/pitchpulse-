@@ -222,5 +222,21 @@
    "South Korea": 3.95,
    "Draw": 3.25
   }
+ },
+ "065b3573e875f8d23803357f73e5b99e": {
+  "first_seen": "2026-06-18T23:05:09.337673+00:00",
+  "opening": {
+   "Australia": 5.25,
+   "USA": 1.6,
+   "Draw": 4.3
+  }
+ },
+ "4cd769aa7bae0ad9762bd69b80ef2903": {
+  "first_seen": "2026-06-18T23:05:09.337673+00:00",
+  "opening": {
+   "Morocco": 1.73,
+   "Scotland": 5.25,
+   "Draw": 3.57
+  }
  }
 }
