@@ -238,5 +238,29 @@
    "Scotland": 5.25,
    "Draw": 3.57
   }
+ },
+ "ef0f74a991d3e35798ae5af77667bce1": {
+  "first_seen": "2026-06-19T17:26:06.031384+00:00",
+  "opening": {
+   "Brazil": 1.11,
+   "Haiti": 21.0,
+   "Draw": 11.0
+  }
+ },
+ "f955d4b3395ce6e3b5ac1031ca52ca4e": {
+  "first_seen": "2026-06-19T17:26:06.031384+00:00",
+  "opening": {
+   "Paraguay": 3.75,
+   "Turkey": 2.05,
+   "Draw": 3.4
+  }
+ },
+ "4f0c518545b0096c68326daf25bffc1e": {
+  "first_seen": "2026-06-19T17:26:06.031384+00:00",
+  "opening": {
+   "Netherlands": 1.725,
+   "Sweden": 4.61,
+   "Draw": 3.915
+  }
  }
 }
