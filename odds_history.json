@@ -286,5 +286,21 @@
    "Tunisia": 7.0,
    "Draw": 4.1
   }
+ },
+ "73529a242e319a86bf3d00ddb4accc37": {
+  "first_seen": "2026-06-20T20:51:49.530097+00:00",
+  "opening": {
+   "Saudi Arabia": 26.0,
+   "Spain": 1.1,
+   "Draw": 10.0
+  }
+ },
+ "5f92f257386ec5bf7c6e2498a21f3a61": {
+  "first_seen": "2026-06-20T20:51:49.530097+00:00",
+  "opening": {
+   "Belgium": 1.43,
+   "Iran": 7.5,
+   "Draw": 4.6
+  }
  }
 }
