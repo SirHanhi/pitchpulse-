@@ -270,5 +270,21 @@
    "Ivory Coast": 5.95,
    "Draw": 4.5
   }
+ },
+ "681895f294b670b4c7b14495dfb583bc": {
+  "first_seen": "2026-06-20T15:25:10.390426+00:00",
+  "opening": {
+   "Cura\u00e7ao": 21.0,
+   "Ecuador": 1.12,
+   "Draw": 9.2
+  }
+ },
+ "dfc5202cf1b8ae002cf952cd04f235b9": {
+  "first_seen": "2026-06-20T15:25:10.390426+00:00",
+  "opening": {
+   "Japan": 1.53,
+   "Tunisia": 7.0,
+   "Draw": 4.1
+  }
  }
 }
