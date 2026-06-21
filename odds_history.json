@@ -302,5 +302,21 @@
    "Iran": 7.5,
    "Draw": 4.6
   }
+ },
+ "852a3abe6d46820720febc0fedebff9a": {
+  "first_seen": "2026-06-21T15:30:37.508357+00:00",
+  "opening": {
+   "Cape Verde": 9.0,
+   "Uruguay": 1.44,
+   "Draw": 4.25
+  }
+ },
+ "c1ec9a65f4b4cf74477b368a7d6282de": {
+  "first_seen": "2026-06-21T15:30:37.508357+00:00",
+  "opening": {
+   "Egypt": 1.57,
+   "New Zealand": 6.1,
+   "Draw": 4.0
+  }
  }
 }
