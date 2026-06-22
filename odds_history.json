@@ -326,5 +326,45 @@
    "Austria": 6.95,
    "Draw": 4.15
   }
+ },
+ "7ad7a0ce2ef2618bb59b066da5642f70": {
+  "first_seen": "2026-06-22T20:17:06.935455+00:00",
+  "opening": {
+   "France": 1.07,
+   "Iraq": 31.0,
+   "Draw": 12.5
+  }
+ },
+ "3f48473742ca0fd2a85930554720c75e": {
+  "first_seen": "2026-06-22T20:17:06.935455+00:00",
+  "opening": {
+   "Norway": 2.28,
+   "Senegal": 3.2,
+   "Draw": 3.4
+  }
+ },
+ "fd8533b650e655030f6a7946f8795db2": {
+  "first_seen": "2026-06-22T20:17:06.935455+00:00",
+  "opening": {
+   "Algeria": 1.52,
+   "Jordan": 6.4,
+   "Draw": 4.25
+  }
+ },
+ "8ba93d190f1f934e33862a97a6353a6e": {
+  "first_seen": "2026-06-22T20:17:06.935455+00:00",
+  "opening": {
+   "Portugal": 1.17,
+   "Uzbekistan": 17.0,
+   "Draw": 7.5
+  }
+ },
+ "2f49dd8deae3079dc4eb2d634d18a99c": {
+  "first_seen": "2026-06-22T20:17:06.935455+00:00",
+  "opening": {
+   "England": 1.2,
+   "Ghana": 15.0,
+   "Draw": 6.75
+  }
  }
 }
