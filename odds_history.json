@@ -382,5 +382,21 @@
    "DR Congo": 6.75,
    "Draw": 4.1
   }
+ },
+ "512ac18beb5aa936a59f7ea3e497ada2": {
+  "first_seen": "2026-06-23T21:52:55.213670+00:00",
+  "opening": {
+   "Bosnia & Herzegovina": 1.36,
+   "Qatar": 7.5,
+   "Draw": 5.25
+  }
+ },
+ "c9ef5822ee64fd5275f7c73251bb56c7": {
+  "first_seen": "2026-06-23T21:52:55.213670+00:00",
+  "opening": {
+   "Canada": 3.4,
+   "Switzerland": 2.33,
+   "Draw": 3.1
+  }
  }
 }
