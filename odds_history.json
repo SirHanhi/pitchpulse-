@@ -366,5 +366,21 @@
    "Ghana": 15.0,
    "Draw": 6.75
   }
+ },
+ "c1bc8c26480cd42b89a0de5329581314": {
+  "first_seen": "2026-06-23T17:21:29.963816+00:00",
+  "opening": {
+   "Croatia": 1.46,
+   "Panama": 7.1,
+   "Draw": 4.5
+  }
+ },
+ "68bfc965eb267508e04d8e8d75c1a0ae": {
+  "first_seen": "2026-06-23T17:21:29.963816+00:00",
+  "opening": {
+   "Colombia": 1.53,
+   "DR Congo": 6.75,
+   "Draw": 4.1
+  }
  }
 }
