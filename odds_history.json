@@ -430,5 +430,21 @@
    "South Korea": 1.6,
    "Draw": 3.9
   }
+ },
+ "a5a0b544a984ab16e564264f3e859b43": {
+  "first_seen": "2026-06-24T21:13:50.910095+00:00",
+  "opening": {
+   "Cura\u00e7ao": 19.0,
+   "Ivory Coast": 1.15,
+   "Draw": 8.0
+  }
+ },
+ "0ec28b84ec399bd4dffbe8d1bc72b3c4": {
+  "first_seen": "2026-06-24T21:13:50.910095+00:00",
+  "opening": {
+   "Ecuador": 3.9,
+   "Germany": 1.84,
+   "Draw": 4.0
+  }
  }
 }
