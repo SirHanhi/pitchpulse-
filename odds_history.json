@@ -398,5 +398,37 @@
    "Switzerland": 2.33,
    "Draw": 3.1
   }
+ },
+ "885ba95805db310a7bcc3fb1a7a6dd28": {
+  "first_seen": "2026-06-24T16:39:02.481965+00:00",
+  "opening": {
+   "Brazil": 1.3,
+   "Scotland": 10.0,
+   "Draw": 5.6
+  }
+ },
+ "d1279ce7f33136a33e99ad442fc855e8": {
+  "first_seen": "2026-06-24T16:39:02.481965+00:00",
+  "opening": {
+   "Haiti": 17.75,
+   "Morocco": 1.17,
+   "Draw": 7.5
+  }
+ },
+ "5993bd5196ca09f83990f0c3261e442e": {
+  "first_seen": "2026-06-24T16:39:02.481965+00:00",
+  "opening": {
+   "Czech Republic": 3.75,
+   "Mexico": 1.92,
+   "Draw": 3.85
+  }
+ },
+ "c0355dfc6e26ec327e379b6ef5824a5f": {
+  "first_seen": "2026-06-24T16:39:02.481965+00:00",
+  "opening": {
+   "South Africa": 6.0,
+   "South Korea": 1.6,
+   "Draw": 3.9
+  }
  }
 }
