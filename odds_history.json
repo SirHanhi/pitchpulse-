@@ -446,5 +446,37 @@
    "Germany": 1.84,
    "Draw": 4.0
   }
+ },
+ "0ed0233bddc4eafc8507f86a9c17b998": {
+  "first_seen": "2026-06-25T17:00:37.161474+00:00",
+  "opening": {
+   "Japan": 1.91,
+   "Sweden": 4.2,
+   "Draw": 3.5
+  }
+ },
+ "f3c4657daa143a0c5bd62cb370d01ce4": {
+  "first_seen": "2026-06-25T17:00:37.161474+00:00",
+  "opening": {
+   "Netherlands": 1.1,
+   "Tunisia": 29.0,
+   "Draw": 10.5
+  }
+ },
+ "22f6ac06dfcc88a847920f62633e6459": {
+  "first_seen": "2026-06-25T17:00:37.161474+00:00",
+  "opening": {
+   "Australia": 4.3,
+   "Paraguay": 2.65,
+   "Draw": 2.3
+  }
+ },
+ "f41aeac9a8343a84b4950f15ea25fba2": {
+  "first_seen": "2026-06-25T17:00:37.161474+00:00",
+  "opening": {
+   "Turkey": 3.85,
+   "USA": 1.83,
+   "Draw": 4.1
+  }
  }
 }
