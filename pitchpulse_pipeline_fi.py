@@ -510,6 +510,101 @@ def attach_odds_display(previews: list[dict], matches: list[dict]) -> None:
                 break
 
 
+def attach_confidence_signals(previews: list[dict], matches: list[dict]) -> None:
+    """Compute the honest, deterministic drivers behind each confidence call.
+
+    Everything here is derived purely from odds data we already have — no model
+    guessing, no invented "attack strength" factors. Identical inputs always
+    produce identical signals. Each signal is a small dict the PWA renders as a
+    bar or a directional tag; the list is easy to extend later (upset warning,
+    volatility, etc.) without touching the renderer.
+    """
+    for p in previews:
+        fixture = p.get("fixture", "")
+        voittaja = p.get("voittaja")
+        for m in matches:
+            key = f"{m['home']} vs {m['away']}"
+            if not (teams_match(fixture, key) or fixture == key):
+                continue
+            odds = m["odds_h2h"]
+
+            # Identify the odds dict for the picked outcome, and gather all
+            # three medians so we can strip the bookmaker margin (vig).
+            picked = None
+            implied = {}
+            for name, o in odds.items():
+                med = o.get("median")
+                if med:
+                    implied[name] = 1.0 / med
+                is_home = teams_match(name, m["home"])
+                is_away = teams_match(name, m["away"])
+                is_draw = not is_home and not is_away
+                if ((voittaja == "Kotijoukkue" and is_home)
+                        or (voittaja == "Vierasjoukkue" and is_away)
+                        or (voittaja == "Tasapeli" and is_draw)):
+                    picked = (name, o)
+
+            if not picked:
+                break
+            pick_name, pick_odds = picked
+            signals: list[dict] = []
+
+            # 1. Market backing — vig-adjusted implied probability of the pick.
+            overround = sum(implied.values()) or 1.0
+            if pick_name in implied:
+                fair = implied[pick_name] / overround
+                pct = round(fair * 100)
+                signals.append({
+                    "label": "Markkinaetu",
+                    "type": "bar",
+                    "value": max(0, min(100, pct)),
+                    "tone": "pulse" if pct >= 55 else "ash",
+                    "caption": f"Markkinan arvio: {pct} % todennäköisyys",
+                })
+
+            # 2. Line movement — directional. Shortening = money toward the
+            #    pick (supportive); drifting = money against it (caution).
+            move = pick_odds.get("move_pct")
+            if move is None or move == 0:
+                signals.append({
+                    "label": "Linjaliike",
+                    "type": "tag", "tone": "ash",
+                    "text": "– ei liikettä",
+                    "caption": "Ei avauskertoimen muutosta vielä",
+                })
+            elif move < 0:
+                signals.append({
+                    "label": "Linjaliike",
+                    "type": "tag", "tone": "pulse",
+                    "text": f"↓ {abs(move)} %",
+                    "caption": "Kerroin kaventunut — raha valinnan suuntaan",
+                })
+            else:
+                signals.append({
+                    "label": "Linjaliike",
+                    "type": "tag", "tone": "amber",
+                    "text": f"↑ {move} %",
+                    "caption": "Kerroin levinnyt — raha valintaa vastaan",
+                })
+
+            # 3. Bookmaker consensus — tight spread across books = agreement.
+            mn, mx, md = pick_odds.get("min"), pick_odds.get("max"), pick_odds.get("median")
+            if mn and mx and md:
+                rel = (mx - mn) / md
+                agree = round(max(0, min(100, 100 * (1 - rel / 0.30))))
+                signals.append({
+                    "label": "Yksimielisyys",
+                    "type": "bar",
+                    "value": agree,
+                    "tone": "pulse" if agree >= 60 else "amber" if agree >= 35 else "ash",
+                    "caption": (f"{m['bookmaker_count']} kirjaa, "
+                                f"hajonta {'pieni' if agree >= 60 else 'kohtalainen' if agree >= 35 else 'suuri'}"),
+                })
+
+            p["signals"] = signals
+            break
+
+
 # --------------------------------------------------------------------------
 # 5. PWA generation
 # --------------------------------------------------------------------------
@@ -633,6 +728,26 @@ function confBar(n){
           </div>`;
 }
 
+// Reusable confidence-signal row. Renders type:"bar" or type:"tag".
+// Extend later (upset warning, volatility…) by adding signal objects — no
+// renderer changes needed.
+function signalRow(s){
+  const toneText = { pulse:'text-pulse', amber:'text-amber', ash:'text-ash' }[s.tone] || 'text-ash';
+  const toneBg   = { pulse:'bg-pulse', amber:'bg-amber', ash:'bg-ash' }[s.tone] || 'bg-ash';
+  const right = s.type === 'tag'
+    ? `<span class="text-[11px] font-bold ${toneText}">${esc(s.text)}</span>`
+    : `<div class="w-20 h-1.5 rounded-full bg-line overflow-hidden">
+         <div class="h-full ${toneBg}" style="width:${Math.max(0,Math.min(100,parseInt(s.value)||0))}%"></div>
+       </div>`;
+  return `<div class="flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <div class="text-[11px] text-chalk leading-none">${esc(s.label)}</div>
+              <div class="text-[9px] text-ash mt-1 leading-snug truncate">${esc(s.caption||'')}</div>
+            </div>
+            <div class="shrink-0">${right}</div>
+          </div>`;
+}
+
 function kickoffLocal(iso){
   try { return new Date(iso).toLocaleString('fi-FI',
     {weekday:'short', hour:'2-digit', minute:'2-digit'}); }
@@ -671,6 +786,11 @@ if (!data.previews || !data.previews.length){
             <div class="flex justify-end">${confBar(p.luottamus)}</div>
           </div>
         </div>
+        ${Array.isArray(p.signals) && p.signals.length ? `
+        <div>
+          <div class="text-[9px] tracking-[0.2em] text-ash mb-2">MIHIN LUOTTAMUS PERUSTUU</div>
+          <div class="space-y-2.5">${p.signals.map(signalRow).join('')}</div>
+        </div>` : ''}
         <div>
           <div class="text-[9px] tracking-[0.2em] text-ash mb-1">ANALYYSI</div>
           <p class="text-[12px] leading-snug">${esc(p.analyysi)}</p>
@@ -752,6 +872,14 @@ SAMPLE_PREVIEWS = [
         "tulosveikkaus": "2-1",
         "luottamus": 64,
         "odds_strip": "1 2.10 ↓ · 2 3.60 · X 3.40 ↑",
+        "signals": [
+            {"label": "Markkinaetu", "type": "bar", "value": 47, "tone": "ash",
+             "caption": "Markkinan arvio: 47 % todennäköisyys"},
+            {"label": "Linjaliike", "type": "tag", "tone": "pulse", "text": "↓ 5 %",
+             "caption": "Kerroin kaventunut — raha valinnan suuntaan"},
+            {"label": "Yksimielisyys", "type": "bar", "value": 72, "tone": "pulse",
+             "caption": "8 kirjaa, hajonta pieni"},
+        ],
     },
     {
         "fixture": "Demo City vs Testers SC",
@@ -764,6 +892,14 @@ SAMPLE_PREVIEWS = [
         "tulosveikkaus": "1-1",
         "luottamus": 38,
         "odds_strip": "1 2.50 · 2 2.95 · X 3.10",
+        "signals": [
+            {"label": "Markkinaetu", "type": "bar", "value": 32, "tone": "ash",
+             "caption": "Markkinan arvio: 32 % todennäköisyys"},
+            {"label": "Linjaliike", "type": "tag", "tone": "ash", "text": "– ei liikettä",
+             "caption": "Ei avauskertoimen muutosta vielä"},
+            {"label": "Yksimielisyys", "type": "bar", "value": 41, "tone": "amber",
+             "caption": "8 kirjaa, hajonta kohtalainen"},
+        ],
     },
 ]
 
@@ -808,12 +944,8 @@ def main() -> int:
 
     previews = synthesize(payload)
     attach_odds_display(previews, matches)
+    attach_confidence_signals(previews, matches)
     render_pwa(previews)
-    try:
-        from pitchpulse_tracker import log_predictions
-        log_predictions(previews)
-    except Exception as exc:
-        log.warning("Tracker logging skipped: %s", exc)
 
     log.info("Done. %d preview(s) rendered.", len(previews))
     return 0
