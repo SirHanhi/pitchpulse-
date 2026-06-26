@@ -494,5 +494,37 @@
    "Senegal": 1.22,
    "Draw": 6.75
   }
+ },
+ "e07b1926be5a4d515c7eb108dbcee9c5": {
+  "first_seen": "2026-06-26T16:32:52.802583+00:00",
+  "opening": {
+   "Cape Verde": 2.63,
+   "Saudi Arabia": 2.75,
+   "Draw": 3.32
+  }
+ },
+ "dcff2e31c0bce001a4db5caaf4fa8822": {
+  "first_seen": "2026-06-26T16:32:52.802583+00:00",
+  "opening": {
+   "Spain": 1.68,
+   "Uruguay": 5.95,
+   "Draw": 3.55
+  }
+ },
+ "581691da05dcd75b5c6d3be91ee9d2ab": {
+  "first_seen": "2026-06-26T16:32:52.802583+00:00",
+  "opening": {
+   "Belgium": 1.18,
+   "New Zealand": 14.75,
+   "Draw": 7.85
+  }
+ },
+ "3e3b5fa2b3c963e74cf044c60db0b573": {
+  "first_seen": "2026-06-26T16:32:52.802583+00:00",
+  "opening": {
+   "Egypt": 2.45,
+   "Iran": 3.85,
+   "Draw": 2.63
+  }
  }
 }
