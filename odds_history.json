@@ -598,5 +598,21 @@
    "Paraguay": 9.75,
    "Draw": 5.3
   }
+ },
+ "5a34afe2de99513ba48360b983cfe80c": {
+  "first_seen": "2026-06-29T17:58:55.282357+00:00",
+  "opening": {
+   "Morocco": 3.4,
+   "Netherlands": 2.325,
+   "Draw": 3.1
+  }
+ },
+ "ce017bea1a26252278053ce759e2416b": {
+  "first_seen": "2026-06-29T17:58:55.282357+00:00",
+  "opening": {
+   "Ivory Coast": 3.48,
+   "Norway": 2.1,
+   "Draw": 3.5
+  }
  }
 }
