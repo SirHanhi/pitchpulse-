@@ -662,5 +662,21 @@
    "Spain": 1.33,
    "Draw": 5.25
   }
+ },
+ "852b4baf0be4b9eef2a30596a8d39249": {
+  "first_seen": "2026-07-02T16:17:42.741814+00:00",
+  "opening": {
+   "Croatia": 5.45,
+   "Portugal": 1.68,
+   "Draw": 3.78
+  }
+ },
+ "c17fe2e46190d7ab6af01504ff240e82": {
+  "first_seen": "2026-07-02T16:17:42.741814+00:00",
+  "opening": {
+   "Algeria": 4.45,
+   "Switzerland": 1.93,
+   "Draw": 3.3
+  }
  }
 }
