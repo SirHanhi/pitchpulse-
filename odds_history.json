@@ -678,5 +678,13 @@
    "Switzerland": 1.93,
    "Draw": 3.3
   }
+ },
+ "fb270a3dac2b682c861bd674a5ff4a04": {
+  "first_seen": "2026-07-02T20:38:37.521414+00:00",
+  "opening": {
+   "Australia": 3.35,
+   "Egypt": 2.48,
+   "Draw": 2.88
+  }
  }
 }
