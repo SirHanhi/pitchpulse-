@@ -686,5 +686,21 @@
    "Egypt": 2.48,
    "Draw": 2.88
   }
+ },
+ "3e161b2448ed76d6b0c0f5bda6fd5bf2": {
+  "first_seen": "2026-07-03T15:58:54.886988+00:00",
+  "opening": {
+   "Argentina": 1.14,
+   "Cape Verde": 22.0,
+   "Draw": 8.5
+  }
+ },
+ "88e032a2b2e5042d26db3f0da1df924a": {
+  "first_seen": "2026-07-03T15:58:54.886988+00:00",
+  "opening": {
+   "Colombia": 1.43,
+   "Ghana": 8.5,
+   "Draw": 4.35
+  }
  }
 }
