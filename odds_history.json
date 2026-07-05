@@ -718,5 +718,21 @@
    "Paraguay": 17.0,
    "Draw": 7.0
   }
+ },
+ "a4634eae056c18d705e3feffb347163f": {
+  "first_seen": "2026-07-05T10:55:37.718392+00:00",
+  "opening": {
+   "Brazil": 1.8,
+   "Norway": 4.5,
+   "Draw": 3.725
+  }
+ },
+ "e61a7b471cadc8e3849158ed59d49cab": {
+  "first_seen": "2026-07-05T10:55:37.718392+00:00",
+  "opening": {
+   "England": 2.4,
+   "Mexico": 3.1,
+   "Draw": 3.18
+  }
  }
 }
