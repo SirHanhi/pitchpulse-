@@ -734,5 +734,21 @@
    "Mexico": 3.1,
    "Draw": 3.18
   }
+ },
+ "16ed3adcf661b3a9bea39871a2d204df": {
+  "first_seen": "2026-07-06T12:33:30.737506+00:00",
+  "opening": {
+   "Portugal": 4.075,
+   "Spain": 1.91,
+   "Draw": 3.6
+  }
+ },
+ "810f80b3ae79f5e86b3747ca15718ed8": {
+  "first_seen": "2026-07-06T12:33:30.737506+00:00",
+  "opening": {
+   "Belgium": 2.8,
+   "USA": 2.5,
+   "Draw": 3.4
+  }
  }
 }
