@@ -750,5 +750,13 @@
    "USA": 2.5,
    "Draw": 3.4
   }
+ },
+ "190922affd0be754bfefd71548dbf90d": {
+  "first_seen": "2026-07-06T18:12:04.558801+00:00",
+  "opening": {
+   "Argentina": 1.36,
+   "Egypt": 9.5,
+   "Draw": 4.8
+  }
  }
 }
