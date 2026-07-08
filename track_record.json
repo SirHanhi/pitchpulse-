@@ -1418,11 +1418,11 @@
    "luottamus": 74,
    "logged_at": "2026-07-06T18:12:25.590425+00:00",
    "updated_at": "2026-07-07T11:35:54.584005+00:00",
-   "graded": false,
-   "actual_score": null,
-   "actual_result": null,
-   "voittaja_hit": null,
-   "score_hit": null,
+   "graded": true,
+   "actual_score": "3-2",
+   "actual_result": "home",
+   "voittaja_hit": true,
+   "score_hit": false,
    "note": ""
   },
   "Switzerland vs Colombia__2026-07-07": {
@@ -1433,11 +1433,11 @@
    "luottamus": 42,
    "logged_at": "2026-07-07T11:35:54.584005+00:00",
    "updated_at": "2026-07-07T18:01:36.772641+00:00",
-   "graded": false,
-   "actual_score": null,
-   "actual_result": null,
-   "voittaja_hit": null,
-   "score_hit": null,
+   "graded": true,
+   "actual_score": "0-0",
+   "actual_result": "draw",
+   "voittaja_hit": false,
+   "score_hit": false,
    "note": ""
   }
  }
