@@ -1439,6 +1439,21 @@
    "voittaja_hit": false,
    "score_hit": false,
    "note": ""
+  },
+  "France vs Morocco__2026-07-09": {
+   "fixture": "France vs Morocco",
+   "kickoff_utc": "2026-07-09T20:00:00+00:00",
+   "voittaja": "Kotijoukkue",
+   "tulosveikkaus": "2-0",
+   "luottamus": 63,
+   "logged_at": "2026-07-09T11:52:26.693809+00:00",
+   "updated_at": "2026-07-09T11:52:26.693809+00:00",
+   "graded": false,
+   "actual_score": null,
+   "actual_result": null,
+   "voittaja_hit": null,
+   "score_hit": null,
+   "note": ""
   }
  }
 }

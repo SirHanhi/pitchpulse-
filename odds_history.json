@@ -766,5 +766,13 @@
    "Switzerland": 3.6,
    "Draw": 3.1
   }
+ },
+ "b6e926d7f026782b9cab2fa02b823d92": {
+  "first_seen": "2026-07-09T11:52:15.224051+00:00",
+  "opening": {
+   "France": 1.57,
+   "Morocco": 6.5,
+   "Draw": 3.94
+  }
  }
 }
