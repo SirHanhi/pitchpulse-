@@ -782,5 +782,21 @@
    "Spain": 1.615,
    "Draw": 4.0
   }
+ },
+ "e66e4478b739fa0657a7a11235e1fcee": {
+  "first_seen": "2026-07-11T10:07:39.309147+00:00",
+  "opening": {
+   "England": 1.92,
+   "Norway": 3.9,
+   "Draw": 3.705
+  }
+ },
+ "200d9cd5eda092c7eb778cc104cd2fd2": {
+  "first_seen": "2026-07-11T10:07:39.309147+00:00",
+  "opening": {
+   "Argentina": 1.69,
+   "Switzerland": 5.775,
+   "Draw": 3.6
+  }
  }
 }
