@@ -1478,11 +1478,11 @@
    "luottamus": 58,
    "logged_at": "2026-07-11T10:07:58.750080+00:00",
    "updated_at": "2026-07-11T17:00:12.252344+00:00",
-   "graded": false,
-   "actual_score": null,
-   "actual_result": null,
-   "voittaja_hit": null,
-   "score_hit": null,
+   "graded": true,
+   "actual_score": "1-2",
+   "actual_result": "away",
+   "voittaja_hit": true,
+   "score_hit": true,
    "note": ""
   },
   "Argentina vs Switzerland__2026-07-12": {
@@ -1493,11 +1493,11 @@
    "luottamus": 65,
    "logged_at": "2026-07-11T10:07:58.750080+00:00",
    "updated_at": "2026-07-11T17:00:12.252344+00:00",
-   "graded": false,
-   "actual_score": null,
-   "actual_result": null,
-   "voittaja_hit": null,
-   "score_hit": null,
+   "graded": true,
+   "actual_score": "3-1",
+   "actual_result": "home",
+   "voittaja_hit": true,
+   "score_hit": false,
    "note": ""
   }
  }
