@@ -1499,6 +1499,21 @@
    "voittaja_hit": true,
    "score_hit": false,
    "note": ""
+  },
+  "France vs Spain__2026-07-14": {
+   "fixture": "France vs Spain",
+   "kickoff_utc": "2026-07-14T19:00:00+00:00",
+   "voittaja": "Kotijoukkue",
+   "tulosveikkaus": "2-1",
+   "luottamus": 48,
+   "logged_at": "2026-07-14T10:28:07.059618+00:00",
+   "updated_at": "2026-07-14T10:28:07.059618+00:00",
+   "graded": false,
+   "actual_score": null,
+   "actual_result": null,
+   "voittaja_hit": null,
+   "score_hit": null,
+   "note": ""
   }
  }
 }
