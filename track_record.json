@@ -1523,11 +1523,11 @@
    "luottamus": 40,
    "logged_at": "2026-07-15T10:40:05.621906+00:00",
    "updated_at": "2026-07-15T17:19:44.886524+00:00",
-   "graded": false,
-   "actual_score": null,
-   "actual_result": null,
-   "voittaja_hit": null,
-   "score_hit": null,
+   "graded": true,
+   "actual_score": "1-2",
+   "actual_result": "away",
+   "voittaja_hit": false,
+   "score_hit": false,
    "note": ""
   }
  }
