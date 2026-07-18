@@ -1529,6 +1529,21 @@
    "voittaja_hit": false,
    "score_hit": false,
    "note": ""
+  },
+  "France vs England__2026-07-18": {
+   "fixture": "France vs England",
+   "kickoff_utc": "2026-07-18T21:00:00+00:00",
+   "voittaja": "Kotijoukkue",
+   "tulosveikkaus": "2-1",
+   "luottamus": 62,
+   "logged_at": "2026-07-18T10:06:58.848730+00:00",
+   "updated_at": "2026-07-18T10:06:58.848730+00:00",
+   "graded": false,
+   "actual_score": null,
+   "actual_result": null,
+   "voittaja_hit": null,
+   "score_hit": null,
+   "note": ""
   }
  }
 }
