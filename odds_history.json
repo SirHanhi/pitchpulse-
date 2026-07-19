@@ -822,5 +822,13 @@
    "France": 1.85,
    "Draw": 4.0
   }
+ },
+ "fb30113e43d113f1ace48b8563ba1ee9": {
+  "first_seen": "2026-07-19T10:17:22.867545+00:00",
+  "opening": {
+   "Argentina": 3.6,
+   "Spain": 2.3,
+   "Draw": 3.0
+  }
  }
 }
